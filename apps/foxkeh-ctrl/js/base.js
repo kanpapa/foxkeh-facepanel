@@ -133,8 +133,13 @@ window.addEventListener("deviceorientation", function(event) {
 
   if (timestamp - lastTime > 1000/FPS) {
     lastTime = timestamp;
+    /* New API */
+    sendRequest(API_BASE_URL+"motor/speed?left="+speed.left+"&right="+speed.right+"&time="+timestamp);
+
+    /* Old API
     sendRequest(API_BASE_URL+"motor/right?speed="+speed.right+"&time="+timestamp);
     sendRequest(API_BASE_URL+"motor/left?speed="+speed.left+"&time="+timestamp);
+    */
   }
 
   var orientedTo =
