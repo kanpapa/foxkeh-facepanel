@@ -25,6 +25,7 @@
         case 'mbedRequested':
             this._httpServer.get('/api/motor/right', handler);
             this._httpServer.get('/api/motor/left', handler);
+            this._httpServer.get('/api/motor/speed', handler);
             this._httpServer.get('/api/tail/swing/start', handler);
             this._httpServer.get('/api/tail/swing/end', handler);
             break;
